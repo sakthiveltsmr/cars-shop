@@ -6,8 +6,10 @@
   --black: #130f40;
   --light-color: #666;
   --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  --border: 1rem solid rgba(0, 0, 0, 0.1);
+  --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --green: rgb(15, 235, 15);
 }
+
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -18,6 +20,13 @@
   text-decoration: none;
   text-transform: capitalize;
   transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
 }
 
 section {
@@ -62,8 +71,9 @@ section {
 }
 
 .btn:hover {
-  background: var(--yellow);
+  background: var(--green);
 }
+
 .header {
   display: flex;
   align-items: center;
@@ -76,44 +86,51 @@ section {
   z-index: 1000;
   background: #fff;
 }
+
 .header .logo {
   font-size: 2.5rem;
   color: var(--black);
   font-weight: bold;
 }
+
 .header .logo span {
-  color: var(--yellow);
+  color: red;
 }
+
 .header .navbar a {
   margin: 0 1rem;
   font-size: 1.7rem;
   color: var(--black);
 }
+
 .header .navbar a:hover {
   color: var(--yellow);
 }
+
 #login-btn .btn {
   margin-top: 0;
 }
+
 #login-btn i {
   display: none;
   font-size: 2.5rem;
   color: var(--light-color);
 }
+
 .header.active {
   padding: 2rem 9%;
   box-shadow: var(--box-shadow);
 }
+
 #menu-btn {
   font-size: 2.5rem;
   color: var(--light-color);
   display: none;
 }
+
 .login-form-container {
   position: fixed;
-  top: -110%;
-  /* margin-top: 1rem; */
-  /* margin-bottom: 1rem; */
+  top: -105%;
   left: 0;
   height: 100%;
   width: 100%;
@@ -123,9 +140,11 @@ section {
   background: rgba(255, 255, 255, 0.9);
   z-index: 10000;
 }
+
 .login-form-container.active {
   top: 0;
 }
+
 .login-form-container form {
   margin: 2rem;
   text-align: center;
@@ -136,6 +155,7 @@ section {
   border: var(--border);
   background: #fff;
 }
+
 .login-form-container form .buttons {
   display: flex;
   gap: 1rem;
@@ -147,6 +167,7 @@ section {
   width: 100%;
   margin: 0.5rem 0;
 }
+
 .login-form-container form .box {
   margin: 0.7rem 0;
   width: 100%;
@@ -157,21 +178,25 @@ section {
   padding: 1rem 1.2rem;
   border-radius: 0.5rem;
 }
+
 .login-form-container form p {
   padding: 1rem 0;
   font-size: 1.5rem;
   color: var(--light-color);
 }
+
 .login-form-container form p a {
-  color: rgb(3, 3, 158);
+  color: var(--yellow);
   text-decoration: underline;
 }
+
 .login-form-container form h3 {
   padding-bottom: 1rem;
   font-size: 2.5rem;
   color: var(--black);
   text-transform: uppercase;
 }
+
 .login-form-container #close-login-form {
   position: absolute;
   top: 1.5rem;
@@ -180,19 +205,24 @@ section {
   color: var(--black);
   cursor: pointer;
 }
+
 .home {
   padding-top: 10rem;
   text-align: center;
   overflow-x: hidden;
 }
+
 .home h3 {
   color: var(--black);
-  font-size: 6.5vw;
+  font-size: 7.5vw;
+  text-transform: uppercase;
 }
+
 .home img {
   width: 100%;
   margin: 1rem 0;
 }
+
 .icons-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -201,6 +231,7 @@ section {
   padding-bottom: 5rem;
   background: #eee;
 }
+
 .icons-container .icons {
   background: #fff;
   display: flex;
@@ -210,6 +241,7 @@ section {
   padding: 2rem;
   gap: 1.5rem;
 }
+
 .icons-container .icons i {
   height: 5rem;
   width: 5rem;
@@ -220,18 +252,21 @@ section {
   text-align: center;
   border-radius: 50%;
 }
+
 .icons-container .icons .content h3 {
   font-size: 2.5rem;
-  color: rgb(243, 65, 169);
+  color: rgb(240, 70, 70);
 }
+
 .icons-container .icons .content p {
   font-size: 1.5rem;
   color: var(--light-color);
 }
+
 .icons-container .icons:hover {
   background: var(--black);
-  cursor: pointer;
 }
+
 .icons-container .icons:hover i {
   background: var(--yellow);
 }
@@ -241,5 +276,118 @@ section {
 }
 
 .icons-container .icons:hover .content p {
+  color: #eee;
+}
+
+.vehicles .vehicles-slider {
+  padding-bottom: 5rem;
+}
+
+.vehicles .vehicles-slider .box {
+  text-align: center;
+}
+
+.vehicles .vehicles-slider .box img {
+  width: 100%;
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+
+.vehicles .vehicles-slider .swiper-wrapper .swiper-slide .content {
+  padding-top: 1rem;
+  transform: scale(0);
+}
+
+.vehicles .vehicles-slider .swiper-wrapper .swiper-slide-active .content {
+  transform: scale(1);
+}
+
+.vehicles .vehicles-slider .swiper-slide-active img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.vehicles .vehicles-slider .box .content h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.vehicles .vehicles-slider .box .content .price {
+  font-size: 2.2rem;
+  color: var(--yellow);
+  padding: 1rem 0;
+  font-weight: bolder;
+}
+
+.vehicles .vehicles-slider .box .content .price span {
+  color: var(--light-color);
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.vehicles .vehicles-slider .box .content p {
+  font-size: 1.6rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+  padding-top: 1.5rem;
+  border-top: var(--border);
+}
+
+.vehicles .vehicles-slider .box .content span {
+  font-size: 1rem;
+  color: var(--yellow);
+  padding: 0 0.5rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--yellow);
+}
+
+.services .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.services .box-container .box {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  text-align: center;
+}
+
+.services .box-container .box i {
+  height: 6rem;
+  width: 6rem;
+  line-height: 6rem;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.services .box-container .box h3 {
+  font-size: 2.2rem;
+  color: var(--black);
+}
+
+.services .box-container .box p {
+  line-height: 1.8;
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  color: var(--light-color);
+}
+
+.services .box-container .box:hover {
+  background: var(--black);
+}
+
+.services .box-container .box:hover h3 {
+  color: #fff;
+}
+
+.services .box-container .box:hover p {
   color: #eee;
 }
